@@ -3,4 +3,5 @@ root: README
 parts:
   - caption: Introduction
     chapters:
-      - file: notebooks/notebook-template
+      - file: notebooks/my-cmip-notebook.ipynb
+
