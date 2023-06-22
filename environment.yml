@@ -1,18 +1,26 @@
 name: cookbook-dev
 channels:
+  - pyviz
   - conda-forge
 dependencies:
   - jupyter-book
   - jupyterlab
   - jupyter_server
   - pip
-  - python>=3.10
+  - python>=3.9
   - matplotlib
   - xarray
   - pandas
-  - intake-esm
-  - fsspec
-  - gcsfs
-  - nc-time-axis
+  - hvplot
+  - panel
+  - bokeh
+  - jupyter_bokeh
+  - planetary-computer
+  - pystac-client
+  - stackstac
+  - xmltodict
+  - geoviews
+  - dask
+  - distributed
   - pip:
       - sphinx-pythia-theme
