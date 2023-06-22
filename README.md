@@ -1,19 +1,15 @@
 <img src="thumbnail.png" alt="thumbnail" width="300"/>
 
-# Quick CMIP demo cookbook - Pythia cook-off 2023
+# Sentinel-2 L2A Interactive Dashboard
 
 [![nightly-build](https://github.com/pritamd47/pythia-cookoff-23/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/pritamd47/pythia-cookoff-23/actions/workflows/nightly-build.yaml)
 [![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/pritamd47/pythia-cookoff-23/main?labpath=notebooks)
 
-This Project Pythia Cookbook covers ... (replace `...` with the main subject of your cookbook ... e.g., _working with radar data in Python_)
-
-## Motivation
-
-(Add a few sentences stating why this cookbook will be useful. What skills will you, "the chef", gain once you have reached the end of the cookbook?)
+This Project Pythia Cookbook provides a recipe for building an interactive dashboard for the Sentinel-2 L2A satellite imagery using the holoviews ecosystem.
 
 ## Authors
 
-[Brian Rose](@brian-rose)
+[Pritam Das](@pritamd47)
 
 ### Contributors
 
@@ -23,15 +19,7 @@ This Project Pythia Cookbook covers ... (replace `...` with the main subject of 
 
 ## Structure
 
-(State one or more sections that will comprise the notebook. E.g., _This cookbook is broken up into two main sections - "Foundations" and "Example Workflows."_ Then, describe each section below.)
-
-### Section 1 ( Replace with the title of this section, e.g. "Foundations" )
-
-(Add content for this section, e.g., "The foundational content includes ... ")
-
-### Section 2 ( Replace with the title of this section, e.g. "Example workflows" )
-
-(Add content for this section, e.g., "Example workflows include ... ")
+This cookbook currently has one recipe in the Introduction section.
 
 ## Running the Notebooks
 
@@ -58,22 +46,21 @@ Jupyter](https://foundations.projectpythia.org/foundations/getting-started-jupyt
 
 If you are interested in running this material locally on your computer, you will need to follow this workflow:
 
-(Replace "cookbook-example" with the title of your cookbooks)
 
-1. Clone the `https://github.com/ProjectPythia/cookbook-example` repository:
+1. Clone the `https://github.com/pritamd47/pythia-cookoff-23` repository:
 
    ```bash
-    git clone https://github.com/ProjectPythia/cookbook-example.git
+    git clone https://github.com/pritamd47/pythia-cookoff-23.git
    ```
 
 1. Move into the `cookbook-example` directory
    ```bash
-   cd cookbook-example
+   cd pythia-cookoff-23
    ```
 1. Create and activate your conda environment from the `environment.yml` file
    ```bash
    conda env create -f environment.yml
-   conda activate cookbook-example
+   conda activate pythia-cookoff-23
    ```
 1. Move into the `notebooks` directory and start up Jupyterlab
    ```bash
