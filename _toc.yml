@@ -3,5 +3,5 @@ root: README
 parts:
   - caption: Introduction
     chapters:
-      - file: notebooks/my-cmip-notebook.ipynb
+      - file: notebooks/data-intake-ms-planetary-computer.ipynb
 
