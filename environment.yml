@@ -22,5 +22,8 @@ dependencies:
   - geoviews
   - dask
   - distributed
+  - odc-stac
+  - graphviz
+  - python-graphviz
   - pip:
       - sphinx-pythia-theme
