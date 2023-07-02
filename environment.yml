@@ -25,5 +25,6 @@ dependencies:
   - odc-stac
   - graphviz
   - python-graphviz
+  - pydantic < 2
   - pip:
       - sphinx-pythia-theme
