@@ -2,8 +2,8 @@
 
 # Sentinel-2 L2A Interactive Dashboard
 
-[![nightly-build](https://github.com/pritamd47/pythia-cookoff-23/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/pritamd47/pythia-cookoff-23/actions/workflows/nightly-build.yaml)
-[![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/pritamd47/pythia-cookoff-23/main?labpath=notebooks)
+[![nightly-build](https://github.com/pritamd47/interactive-sentinel-2/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/pritamd47/interactive-sentinel-2/actions/workflows/nightly-build.yaml)
+[![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/pritamd47/interactive-sentinel-2/main?labpath=notebooks)
 
 This Project Pythia Cookbook provides a recipe for building an interactive dashboard for the Sentinel-2 L2A satellite imagery using the holoviews ecosystem.
 
@@ -47,20 +47,20 @@ Jupyter](https://foundations.projectpythia.org/foundations/getting-started-jupyt
 If you are interested in running this material locally on your computer, you will need to follow this workflow:
 
 
-1. Clone the `https://github.com/pritamd47/pythia-cookoff-23` repository:
+1. Clone the `https://github.com/pritamd47/interactive-sentinel-2` repository:
 
    ```bash
-    git clone https://github.com/pritamd47/pythia-cookoff-23.git
+    git clone https://github.com/pritamd47/interactive-sentinel-2.git
    ```
 
 1. Move into the `cookbook-example` directory
    ```bash
-   cd pythia-cookoff-23
+   cd interactive-sentinel-2
    ```
 1. Create and activate your conda environment from the `environment.yml` file
    ```bash
    conda env create -f environment.yml
-   conda activate pythia-cookoff-23
+   conda activate interactive-sentinel-2
    ```
 1. Move into the `notebooks` directory and start up Jupyterlab
    ```bash
