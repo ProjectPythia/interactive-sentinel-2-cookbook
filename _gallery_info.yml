@@ -1,0 +1,14 @@
+thumbnail: thumbnail.png
+tags:
+  domains:
+    - interactive-visualization
+    - satellite
+    - sentinel-2
+  packages:
+    - dask
+    - xarray
+    - odc.stac
+    - planetary-computer
+    - hvplot
+    - panel
+    - geoviews
