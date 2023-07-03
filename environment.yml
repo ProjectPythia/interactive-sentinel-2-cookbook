@@ -1,4 +1,4 @@
-name: cookbook-dev
+name: interactive-sentinel-2-cookbook-dev
 channels:
   - pyviz
   - conda-forge
