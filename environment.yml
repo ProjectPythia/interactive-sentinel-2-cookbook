@@ -1,4 +1,4 @@
-name: cookbook-dev
+name: interactive-sentinel-2-cookbook-dev
 channels:
   - pyviz
   - conda-forge
@@ -22,5 +22,9 @@ dependencies:
   - geoviews
   - dask
   - distributed
+  - odc-stac
+  - graphviz
+  - python-graphviz
+  - pydantic < 2
   - pip:
       - sphinx-pythia-theme
