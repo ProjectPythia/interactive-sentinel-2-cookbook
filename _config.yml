@@ -1,19 +1,10 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Project Pythia Cookbook Template
-author: the <a href="https://projectpythia.org/">Project Pythia</a> Community
+title: Sentinel-2 L2A Interactive Dashboard
+author: <a href="https://github.com/pritamd47">Pritam Das</a>
 logo: notebooks/images/logos/pythia_logo-white-rtext.svg
-email: projectpythia@ucar.edu
 copyright: "2023"
-
-description: A sample cookbook description.
-thumbnail: thumbnail.png
-tags:
-  domains:
-    - sampledomain
-  packages:
-    - samplepackage
 
 execute:
   # To execute notebooks via a Binder instead, replace 'cache' with 'binder'
