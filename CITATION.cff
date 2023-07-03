@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this cookbook, please cite it as below."
+authors:
+  # add additional entries for each author -- see https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md
+  - family-names: Das
+    given-names: Pritam
+    orcid: https://orcid.org/0000-0003-4795-4736 # optional
+    website: https://github.com/pritamd47 # optional
+    affiliation: University of Washington # optional
+  - name: "This Cookbook contributors" # use the 'name' field to acknowledge organizations
+    website: "https://github.com/ProjectPythia/this-cookbook/graphs/contributors"
+title: "Sentinel-2 L2A Interactive Dashboard"
+abstract: "This Project Pythia Cookbook provides a recipe for building an interactive dashboard for the Sentinel-2 L2A satellite imagery using the holoviews ecosystem."
