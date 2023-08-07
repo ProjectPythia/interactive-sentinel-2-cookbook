@@ -1,26 +1,20 @@
 name: interactive-sentinel-2-cookbook-dev
 channels:
-  - pyviz
   - conda-forge
 dependencies:
-  - jupyter-book
-  - jupyterlab
-  - jupyter_server
+  - python
   - pip
-  - python>=3.9
-  - matplotlib
-  - xarray
+  - jupyterlab
   - pandas
+  - xarray
+  - dask
   - hvplot
+  - geoviews
   - panel
   - bokeh
   - jupyter_bokeh
   - planetary-computer
   - pystac-client
-  - geoviews
-  - dask
-  - distributed
   - odc-stac
-  - pydantic < 2
   - pip:
       - sphinx-pythia-theme
