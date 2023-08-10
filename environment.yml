@@ -1,6 +1,5 @@
-name: interactive-sentinel-2-cookbook-dev
+name: is2-cookbook-dev
 channels:
-  - pyviz
   - conda-forge
 dependencies:
   - jupyter-book
@@ -21,6 +20,6 @@ dependencies:
   - dask
   - distributed
   - odc-stac
-  - pydantic < 2
+  - pydantic
   - pip:
       - sphinx-pythia-theme
