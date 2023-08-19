@@ -13,8 +13,8 @@ This Project Pythia Cookbook provides a recipe for building an interactive dashb
 
 ### Contributors
 
-<a href="https://github.com/ProjectPythia/cookbook-template/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ProjectPythia/cookbook-template" />
+<a href="https://github.com/ProjectPythia/interactive-sentinel-2-cookbook/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ProjectPythia/interactive-sentinel-2-cookbook" />
 </a>
 
 ## Structure
