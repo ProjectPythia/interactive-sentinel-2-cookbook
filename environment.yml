@@ -5,7 +5,6 @@ dependencies:
   - jupyter-book
   - jupyterlab
   - jupyter_server
-  - pip
   - python>=3.9
   - matplotlib
   - xarray
@@ -21,5 +20,4 @@ dependencies:
   - distributed
   - odc-stac
   - pydantic
-  - pip:
-      - sphinx-pythia-theme
+  - sphinx-pythia-theme
