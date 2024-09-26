@@ -47,10 +47,10 @@ Jupyter](https://foundations.projectpythia.org/foundations/getting-started-jupyt
 If you are interested in running this material locally on your computer, you will need to follow this workflow:
 
 
-1. Clone the `https://github.com/pritamd47/interactive-sentinel-2` repository:
+1. Clone the ` https://github.com/ProjectPythia/interactive-sentinel-2-cookbook` repository:
 
    ```bash
-    git clone https://github.com/pritamd47/interactive-sentinel-2.git
+    git clone  https://github.com/ProjectPythia/interactive-sentinel-2-cookbook.git
    ```
 
 1. Move into the `cookbook-example` directory
