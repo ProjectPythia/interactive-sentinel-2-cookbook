@@ -1,6 +1,6 @@
-<img src="thumbnail.png" alt="thumbnail" width="300"/>
-
 # Sentinel-2 L2A Interactive Dashboard
+
+<img src="thumbnail.png" alt="thumbnail" width="300"/>
 
 [![nightly-build](https://github.com/pritamd47/interactive-sentinel-2/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/pritamd47/interactive-sentinel-2/actions/workflows/nightly-build.yaml)
 [![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/pritamd47/interactive-sentinel-2/main?labpath=notebooks)
