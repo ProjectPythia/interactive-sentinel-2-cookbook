@@ -21,3 +21,4 @@ dependencies:
   - odc-stac
   - pydantic
   - sphinx-pythia-theme
+  - mystmd
