@@ -1,11 +1,11 @@
 version: 1
 extends:
-  - https://raw.githubusercontent.com/projectpythia-mystmd/pythia-config/main/pythia.yml
+  - https://raw.githubusercontent.com/projectpythia/pythia-config/main/pythia.yml
 project:
   title: Sentinel-2 L2A Interactive Dashboard
   authors:
     - name: <a href="https://github.com/pritamd47">Pritam Das</a>
-  github: https://github.com/projectpythia-mystmd/interactive-sentinel-2-cookbook
+  github: https://github.com/projectpythia/interactive-sentinel-2-cookbook
   copyright: '2024'
   toc:
     - file: README.md
@@ -17,7 +17,7 @@ project:
         - file: notebooks/data-intake-ms-planetary-computer.ipynb
   jupyter:
       binder:
-        repo: projectpythia-mystmd/interactive-sentinel-2-cookbook
+        repo: projectpythia/interactive-sentinel-2-cookbook
 site:
   options:
     logo: notebooks/images/logos/pythia_logo-white-rtext.svg
