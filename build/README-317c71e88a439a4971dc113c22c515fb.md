@@ -9,7 +9,7 @@ This Project Pythia Cookbook provides a recipe for building an interactive dashb
 
 ## Authors
 
-[Pritam Das](@pritamd47)
+[Pritam Das](https://github.com/pritamd47)
 
 ### Contributors
 
