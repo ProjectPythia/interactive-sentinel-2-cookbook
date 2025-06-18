@@ -4,7 +4,8 @@ extends:
 project:
   title: Sentinel-2 L2A Interactive Dashboard
   authors:
-    - name: <a href="https://github.com/pritamd47">Pritam Das</a>
+    - name: Pritam Das
+    - url: https://github.com/pritamd47
   github: https://github.com/projectpythia/interactive-sentinel-2-cookbook
   copyright: '2024'
   toc:
