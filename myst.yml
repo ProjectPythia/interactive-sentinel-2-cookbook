@@ -1,0 +1,25 @@
+version: 1
+extends:
+  - https://raw.githubusercontent.com/projectpythia/pythia-config/main/pythia.yml
+project:
+  title: Sentinel-2 L2A Interactive Dashboard
+  authors:
+    - name: <a href="https://github.com/pritamd47">Pritam Das</a>
+  github: https://github.com/projectpythia/interactive-sentinel-2-cookbook
+  copyright: '2024'
+  toc:
+    - file: README.md
+    - title: Preamble
+      children:
+        - file: notebooks/how-to-cite.md
+    - title: Introduction
+      children:
+        - file: notebooks/data-intake-ms-planetary-computer.ipynb
+  jupyter:
+      binder:
+        repo: projectpythia/interactive-sentinel-2-cookbook
+site:
+  options:
+    logo: notebooks/images/logos/pythia_logo-white-rtext.svg
+    folders: true
+  template: book-theme
