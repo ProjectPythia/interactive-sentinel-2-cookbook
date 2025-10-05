@@ -13,9 +13,7 @@
 </symbol>
 </defs>
 </svg>
-<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
- *
- */
+<style>/* CSS stylesheet for displaying xarray objects in notebooks */
 
 :root {
   --xr-font-color0: var(
@@ -94,6 +92,7 @@ body.vscode-dark {
   display: block !important;
   min-width: 300px;
   max-width: 700px;
+  line-height: 1.6;
 }
 
 .xr-text-repr-fallback {
@@ -116,11 +115,18 @@ body.vscode-dark {
 }
 
 .xr-obj-type,
-.xr-array-name {
+.xr-obj-name,
+.xr-group-name {
   margin-left: 2px;
   margin-right: 10px;
 }
 
+.xr-group-name::before {
+  content: "📁";
+  padding-right: 0.3em;
+}
+
+.xr-group-name,
 .xr-obj-type {
   color: var(--xr-font-color2);
 }
@@ -129,6 +135,8 @@ body.vscode-dark {
   padding-left: 0 !important;
   display: grid;
   grid-template-columns: 150px auto auto 1fr 0 20px 0 20px;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .xr-section-item {
@@ -139,6 +147,7 @@ body.vscode-dark {
   display: inline-block;
   opacity: 0;
   height: 0;
+  margin: 0;
 }
 
 .xr-section-item input + label {
@@ -197,7 +206,6 @@ body.vscode-dark {
 .xr-section-summary,
 .xr-section-inline-details {
   padding-top: 4px;
-  padding-bottom: 4px;
 }
 
 .xr-section-inline-details {
@@ -207,11 +215,38 @@ body.vscode-dark {
 .xr-section-details {
   display: none;
   grid-column: 1 / -1;
+  margin-top: 4px;
   margin-bottom: 5px;
 }
 
 .xr-section-summary-in:checked ~ .xr-section-details {
   display: contents;
+}
+
+.xr-group-box {
+  display: inline-grid;
+  grid-template-columns: 0px 20px auto;
+  width: 100%;
+}
+
+.xr-group-box-vline {
+  grid-column-start: 1;
+  border-right: 0.2em solid;
+  border-color: var(--xr-border-color);
+  width: 0px;
+}
+
+.xr-group-box-hline {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  height: 1em;
+  width: 20px;
+  border-bottom: 0.2em solid;
+  border-color: var(--xr-border-color);
+}
+
+.xr-group-box-contents {
+  grid-column-start: 3;
 }
 
 .xr-array-wrap {
@@ -442,13 +477,13 @@ dl.xr-attrs {
   stroke-width: 0.8px;
 }
 </style><pre class='xr-text-repr-fallback'>&lt;xarray.DataArray (band: 12, time: 64, y: 166, x: 144)&gt; Size: 73MB
-dask.array&lt;getitem, shape=(12, 64, 166, 144), dtype=float32, chunksize=(1, 1, 166, 144), chunktype=numpy.ndarray&gt;
+dask.array&lt;stack, shape=(12, 64, 166, 144), dtype=float32, chunksize=(1, 1, 166, 144), chunktype=numpy.ndarray&gt;
 Coordinates:
   * y            (y) float64 1kB 4.426e+06 4.426e+06 ... 4.425e+06 4.425e+06
   * x            (x) float64 1kB 4.758e+05 4.758e+05 ... 4.772e+05 4.772e+05
     spatial_ref  int32 4B 32613
   * time         (time) datetime64[ns] 512B 2022-01-26T17:56:21.024000 ... 20...
-  * band         (band) object 96B &#x27;B01&#x27; &#x27;B02&#x27; &#x27;B03&#x27; &#x27;B04&#x27; ... &#x27;B11&#x27; &#x27;B12&#x27; &#x27;B8A&#x27;</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'></div><ul class='xr-dim-list'><li><span class='xr-has-index'>band</span>: 12</li><li><span class='xr-has-index'>time</span>: 64</li><li><span class='xr-has-index'>y</span>: 166</li><li><span class='xr-has-index'>x</span>: 144</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-820c239b-9b21-4dcf-97bd-1698d62b976c' class='xr-array-in' type='checkbox' checked><label for='section-820c239b-9b21-4dcf-97bd-1698d62b976c' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>dask.array&lt;chunksize=(1, 1, 166, 144), meta=np.ndarray&gt;</span></div><div class='xr-array-data'><table>
+  * band         (band) object 96B &#x27;B01&#x27; &#x27;B02&#x27; &#x27;B03&#x27; &#x27;B04&#x27; ... &#x27;B11&#x27; &#x27;B12&#x27; &#x27;B8A&#x27;</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-obj-name'></div><ul class='xr-dim-list'><li><span class='xr-has-index'>band</span>: 12</li><li><span class='xr-has-index'>time</span>: 64</li><li><span class='xr-has-index'>y</span>: 166</li><li><span class='xr-has-index'>x</span>: 144</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-433786af-961e-4aa9-a06a-0b249c20e43d' class='xr-array-in' type='checkbox' checked><label for='section-433786af-961e-4aa9-a06a-0b249c20e43d' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>dask.array&lt;chunksize=(1, 1, 166, 144), meta=np.ndarray&gt;</span></div><div class='xr-array-data'><table>
     <tr>
         <td>
             <table style="border-collapse: collapse;">
@@ -474,7 +509,7 @@ Coordinates:
                     </tr>
                     <tr>
                         <th> Dask graph </th>
-                        <td colspan="2"> 768 chunks in 41 graph layers </td>
+                        <td colspan="2"> 768 chunks in 37 graph layers </td>
                     </tr>
                     <tr>
                         <th> Data type </th>
@@ -615,7 +650,7 @@ Coordinates:
 </svg>
         </td>
     </tr>
-</table></div></div></li><li class='xr-section-item'><input id='section-212131e9-2f0a-49bb-9171-681a1ce5c8f3' class='xr-section-summary-in' type='checkbox'  checked><label for='section-212131e9-2f0a-49bb-9171-681a1ce5c8f3' class='xr-section-summary' >Coordinates: <span>(5)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>4.426e+06 4.426e+06 ... 4.425e+06</div><input id='attrs-8b48cea4-9dd1-4474-92b1-e6e140afcc20' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8b48cea4-9dd1-4474-92b1-e6e140afcc20' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3f44559d-dd62-46cf-96f6-aeab561de2e4' class='xr-var-data-in' type='checkbox'><label for='data-3f44559d-dd62-46cf-96f6-aeab561de2e4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>metre</dd><dt><span>resolution :</span></dt><dd>-10.0</dd><dt><span>crs :</span></dt><dd>EPSG:32613</dd></dl></div><div class='xr-var-data'><pre>array([4426425., 4426415., 4426405., 4426395., 4426385., 4426375., 4426365.,
+</table></div></div></li><li class='xr-section-item'><input id='section-69b1e57a-0a1a-47ba-8fe4-b9a158bd4aab' class='xr-section-summary-in' type='checkbox'  checked><label for='section-69b1e57a-0a1a-47ba-8fe4-b9a158bd4aab' class='xr-section-summary' >Coordinates: <span>(5)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>4.426e+06 4.426e+06 ... 4.425e+06</div><input id='attrs-828e57de-911c-446e-a9d4-e750b01c85ab' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-828e57de-911c-446e-a9d4-e750b01c85ab' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-172a75bc-f4e1-4ae1-9c2d-56898d1f0e4d' class='xr-var-data-in' type='checkbox'><label for='data-172a75bc-f4e1-4ae1-9c2d-56898d1f0e4d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>metre</dd><dt><span>resolution :</span></dt><dd>-10.0</dd><dt><span>crs :</span></dt><dd>EPSG:32613</dd></dl></div><div class='xr-var-data'><pre>array([4426425., 4426415., 4426405., 4426395., 4426385., 4426375., 4426365.,
        4426355., 4426345., 4426335., 4426325., 4426315., 4426305., 4426295.,
        4426285., 4426275., 4426265., 4426255., 4426245., 4426235., 4426225.,
        4426215., 4426205., 4426195., 4426185., 4426175., 4426165., 4426155.,
@@ -638,7 +673,7 @@ Coordinates:
        4425025., 4425015., 4425005., 4424995., 4424985., 4424975., 4424965.,
        4424955., 4424945., 4424935., 4424925., 4424915., 4424905., 4424895.,
        4424885., 4424875., 4424865., 4424855., 4424845., 4424835., 4424825.,
-       4424815., 4424805., 4424795., 4424785., 4424775.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>4.758e+05 4.758e+05 ... 4.772e+05</div><input id='attrs-3c83f62c-5814-456f-baed-40fdf7939c3e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3c83f62c-5814-456f-baed-40fdf7939c3e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-27eabab6-9d27-4fc4-9772-32ec23a387c7' class='xr-var-data-in' type='checkbox'><label for='data-27eabab6-9d27-4fc4-9772-32ec23a387c7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>metre</dd><dt><span>resolution :</span></dt><dd>10.0</dd><dt><span>crs :</span></dt><dd>EPSG:32613</dd></dl></div><div class='xr-var-data'><pre>array([475815., 475825., 475835., 475845., 475855., 475865., 475875., 475885.,
+       4424815., 4424805., 4424795., 4424785., 4424775.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>4.758e+05 4.758e+05 ... 4.772e+05</div><input id='attrs-490c27b8-15c4-4db6-a3ef-20ad2226e33f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-490c27b8-15c4-4db6-a3ef-20ad2226e33f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5d7c7f25-1b18-4248-9a89-68df707f9161' class='xr-var-data-in' type='checkbox'><label for='data-5d7c7f25-1b18-4248-9a89-68df707f9161' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>metre</dd><dt><span>resolution :</span></dt><dd>10.0</dd><dt><span>crs :</span></dt><dd>EPSG:32613</dd></dl></div><div class='xr-var-data'><pre>array([475815., 475825., 475835., 475845., 475855., 475865., 475875., 475885.,
        475895., 475905., 475915., 475925., 475935., 475945., 475955., 475965.,
        475975., 475985., 475995., 476005., 476015., 476025., 476035., 476045.,
        476055., 476065., 476075., 476085., 476095., 476105., 476115., 476125.,
@@ -655,7 +690,7 @@ Coordinates:
        476935., 476945., 476955., 476965., 476975., 476985., 476995., 477005.,
        477015., 477025., 477035., 477045., 477055., 477065., 477075., 477085.,
        477095., 477105., 477115., 477125., 477135., 477145., 477155., 477165.,
-       477175., 477185., 477195., 477205., 477215., 477225., 477235., 477245.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>spatial_ref</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>32613</div><input id='attrs-421e0b16-19c5-4aeb-8ec2-43d3bd3c933a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-421e0b16-19c5-4aeb-8ec2-43d3bd3c933a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ee699499-b0eb-4af8-b917-0157466f03ff' class='xr-var-data-in' type='checkbox'><label for='data-ee699499-b0eb-4af8-b917-0157466f03ff' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>spatial_ref :</span></dt><dd>PROJCRS[&quot;WGS 84 / UTM zone 13N&quot;,BASEGEOGCRS[&quot;WGS 84&quot;,ENSEMBLE[&quot;World Geodetic System 1984 ensemble&quot;,MEMBER[&quot;World Geodetic System 1984 (Transit)&quot;],MEMBER[&quot;World Geodetic System 1984 (G730)&quot;],MEMBER[&quot;World Geodetic System 1984 (G873)&quot;],MEMBER[&quot;World Geodetic System 1984 (G1150)&quot;],MEMBER[&quot;World Geodetic System 1984 (G1674)&quot;],MEMBER[&quot;World Geodetic System 1984 (G1762)&quot;],MEMBER[&quot;World Geodetic System 1984 (G2139)&quot;],MEMBER[&quot;World Geodetic System 1984 (G2296)&quot;],ELLIPSOID[&quot;WGS 84&quot;,6378137,298.257223563,LENGTHUNIT[&quot;metre&quot;,1]],ENSEMBLEACCURACY[2.0]],PRIMEM[&quot;Greenwich&quot;,0,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433]],ID[&quot;EPSG&quot;,4326]],CONVERSION[&quot;UTM zone 13N&quot;,METHOD[&quot;Transverse Mercator&quot;,ID[&quot;EPSG&quot;,9807]],PARAMETER[&quot;Latitude of natural origin&quot;,0,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8801]],PARAMETER[&quot;Longitude of natural origin&quot;,-105,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8802]],PARAMETER[&quot;Scale factor at natural origin&quot;,0.9996,SCALEUNIT[&quot;unity&quot;,1],ID[&quot;EPSG&quot;,8805]],PARAMETER[&quot;False easting&quot;,500000,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,8806]],PARAMETER[&quot;False northing&quot;,0,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,8807]]],CS[Cartesian,2],AXIS[&quot;(E)&quot;,east,ORDER[1],LENGTHUNIT[&quot;metre&quot;,1]],AXIS[&quot;(N)&quot;,north,ORDER[2],LENGTHUNIT[&quot;metre&quot;,1]],USAGE[SCOPE[&quot;Navigation and medium accuracy spatial referencing.&quot;],AREA[&quot;Between 108°W and 102°W, northern hemisphere between equator and 84°N, onshore and offshore. Canada - Northwest Territories (NWT); Nunavut; Saskatchewan. Mexico. United States (USA).&quot;],BBOX[0,-108,84,-102]],ID[&quot;EPSG&quot;,32613]]</dd><dt><span>crs_wkt :</span></dt><dd>PROJCRS[&quot;WGS 84 / UTM zone 13N&quot;,BASEGEOGCRS[&quot;WGS 84&quot;,ENSEMBLE[&quot;World Geodetic System 1984 ensemble&quot;,MEMBER[&quot;World Geodetic System 1984 (Transit)&quot;],MEMBER[&quot;World Geodetic System 1984 (G730)&quot;],MEMBER[&quot;World Geodetic System 1984 (G873)&quot;],MEMBER[&quot;World Geodetic System 1984 (G1150)&quot;],MEMBER[&quot;World Geodetic System 1984 (G1674)&quot;],MEMBER[&quot;World Geodetic System 1984 (G1762)&quot;],MEMBER[&quot;World Geodetic System 1984 (G2139)&quot;],MEMBER[&quot;World Geodetic System 1984 (G2296)&quot;],ELLIPSOID[&quot;WGS 84&quot;,6378137,298.257223563,LENGTHUNIT[&quot;metre&quot;,1]],ENSEMBLEACCURACY[2.0]],PRIMEM[&quot;Greenwich&quot;,0,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433]],ID[&quot;EPSG&quot;,4326]],CONVERSION[&quot;UTM zone 13N&quot;,METHOD[&quot;Transverse Mercator&quot;,ID[&quot;EPSG&quot;,9807]],PARAMETER[&quot;Latitude of natural origin&quot;,0,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8801]],PARAMETER[&quot;Longitude of natural origin&quot;,-105,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8802]],PARAMETER[&quot;Scale factor at natural origin&quot;,0.9996,SCALEUNIT[&quot;unity&quot;,1],ID[&quot;EPSG&quot;,8805]],PARAMETER[&quot;False easting&quot;,500000,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,8806]],PARAMETER[&quot;False northing&quot;,0,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,8807]]],CS[Cartesian,2],AXIS[&quot;(E)&quot;,east,ORDER[1],LENGTHUNIT[&quot;metre&quot;,1]],AXIS[&quot;(N)&quot;,north,ORDER[2],LENGTHUNIT[&quot;metre&quot;,1]],USAGE[SCOPE[&quot;Navigation and medium accuracy spatial referencing.&quot;],AREA[&quot;Between 108°W and 102°W, northern hemisphere between equator and 84°N, onshore and offshore. Canada - Northwest Territories (NWT); Nunavut; Saskatchewan. Mexico. United States (USA).&quot;],BBOX[0,-108,84,-102]],ID[&quot;EPSG&quot;,32613]]</dd><dt><span>semi_major_axis :</span></dt><dd>6378137.0</dd><dt><span>semi_minor_axis :</span></dt><dd>6356752.314245179</dd><dt><span>inverse_flattening :</span></dt><dd>298.257223563</dd><dt><span>reference_ellipsoid_name :</span></dt><dd>WGS 84</dd><dt><span>longitude_of_prime_meridian :</span></dt><dd>0.0</dd><dt><span>prime_meridian_name :</span></dt><dd>Greenwich</dd><dt><span>geographic_crs_name :</span></dt><dd>WGS 84</dd><dt><span>horizontal_datum_name :</span></dt><dd>World Geodetic System 1984 ensemble</dd><dt><span>projected_crs_name :</span></dt><dd>WGS 84 / UTM zone 13N</dd><dt><span>grid_mapping_name :</span></dt><dd>transverse_mercator</dd><dt><span>latitude_of_projection_origin :</span></dt><dd>0.0</dd><dt><span>longitude_of_central_meridian :</span></dt><dd>-105.0</dd><dt><span>false_easting :</span></dt><dd>500000.0</dd><dt><span>false_northing :</span></dt><dd>0.0</dd><dt><span>scale_factor_at_central_meridian :</span></dt><dd>0.9996</dd><dt><span>GeoTransform :</span></dt><dd>475810 10 0 4426430 0 -10</dd></dl></div><div class='xr-var-data'><pre>array(32613, dtype=int32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2022-01-26T17:56:21.024000 ... 2...</div><input id='attrs-f5c6577c-1474-4641-85da-ad9fc848f421' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-f5c6577c-1474-4641-85da-ad9fc848f421' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-fec4a2d7-1f9b-4d67-96e0-a598000e6f73' class='xr-var-data-in' type='checkbox'><label for='data-fec4a2d7-1f9b-4d67-96e0-a598000e6f73' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2022-01-26T17:56:21.024000000&#x27;, &#x27;2022-01-31T17:55:49.024000000&#x27;,
+       477175., 477185., 477195., 477205., 477215., 477225., 477235., 477245.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>spatial_ref</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>32613</div><input id='attrs-dff80750-5693-4e37-a49e-e75d6ec62aae' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-dff80750-5693-4e37-a49e-e75d6ec62aae' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6fa48dbc-b892-42f2-964a-fd15a9da8ffd' class='xr-var-data-in' type='checkbox'><label for='data-6fa48dbc-b892-42f2-964a-fd15a9da8ffd' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>spatial_ref :</span></dt><dd>PROJCRS[&quot;WGS 84 / UTM zone 13N&quot;,BASEGEOGCRS[&quot;WGS 84&quot;,ENSEMBLE[&quot;World Geodetic System 1984 ensemble&quot;,MEMBER[&quot;World Geodetic System 1984 (Transit)&quot;],MEMBER[&quot;World Geodetic System 1984 (G730)&quot;],MEMBER[&quot;World Geodetic System 1984 (G873)&quot;],MEMBER[&quot;World Geodetic System 1984 (G1150)&quot;],MEMBER[&quot;World Geodetic System 1984 (G1674)&quot;],MEMBER[&quot;World Geodetic System 1984 (G1762)&quot;],MEMBER[&quot;World Geodetic System 1984 (G2139)&quot;],MEMBER[&quot;World Geodetic System 1984 (G2296)&quot;],ELLIPSOID[&quot;WGS 84&quot;,6378137,298.257223563,LENGTHUNIT[&quot;metre&quot;,1]],ENSEMBLEACCURACY[2.0]],PRIMEM[&quot;Greenwich&quot;,0,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433]],ID[&quot;EPSG&quot;,4326]],CONVERSION[&quot;UTM zone 13N&quot;,METHOD[&quot;Transverse Mercator&quot;,ID[&quot;EPSG&quot;,9807]],PARAMETER[&quot;Latitude of natural origin&quot;,0,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8801]],PARAMETER[&quot;Longitude of natural origin&quot;,-105,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8802]],PARAMETER[&quot;Scale factor at natural origin&quot;,0.9996,SCALEUNIT[&quot;unity&quot;,1],ID[&quot;EPSG&quot;,8805]],PARAMETER[&quot;False easting&quot;,500000,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,8806]],PARAMETER[&quot;False northing&quot;,0,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,8807]]],CS[Cartesian,2],AXIS[&quot;(E)&quot;,east,ORDER[1],LENGTHUNIT[&quot;metre&quot;,1]],AXIS[&quot;(N)&quot;,north,ORDER[2],LENGTHUNIT[&quot;metre&quot;,1]],USAGE[SCOPE[&quot;Navigation and medium accuracy spatial referencing.&quot;],AREA[&quot;Between 108°W and 102°W, northern hemisphere between equator and 84°N, onshore and offshore. Canada - Northwest Territories (NWT); Nunavut; Saskatchewan. Mexico. United States (USA).&quot;],BBOX[0,-108,84,-102]],ID[&quot;EPSG&quot;,32613]]</dd><dt><span>crs_wkt :</span></dt><dd>PROJCRS[&quot;WGS 84 / UTM zone 13N&quot;,BASEGEOGCRS[&quot;WGS 84&quot;,ENSEMBLE[&quot;World Geodetic System 1984 ensemble&quot;,MEMBER[&quot;World Geodetic System 1984 (Transit)&quot;],MEMBER[&quot;World Geodetic System 1984 (G730)&quot;],MEMBER[&quot;World Geodetic System 1984 (G873)&quot;],MEMBER[&quot;World Geodetic System 1984 (G1150)&quot;],MEMBER[&quot;World Geodetic System 1984 (G1674)&quot;],MEMBER[&quot;World Geodetic System 1984 (G1762)&quot;],MEMBER[&quot;World Geodetic System 1984 (G2139)&quot;],MEMBER[&quot;World Geodetic System 1984 (G2296)&quot;],ELLIPSOID[&quot;WGS 84&quot;,6378137,298.257223563,LENGTHUNIT[&quot;metre&quot;,1]],ENSEMBLEACCURACY[2.0]],PRIMEM[&quot;Greenwich&quot;,0,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433]],ID[&quot;EPSG&quot;,4326]],CONVERSION[&quot;UTM zone 13N&quot;,METHOD[&quot;Transverse Mercator&quot;,ID[&quot;EPSG&quot;,9807]],PARAMETER[&quot;Latitude of natural origin&quot;,0,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8801]],PARAMETER[&quot;Longitude of natural origin&quot;,-105,ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],ID[&quot;EPSG&quot;,8802]],PARAMETER[&quot;Scale factor at natural origin&quot;,0.9996,SCALEUNIT[&quot;unity&quot;,1],ID[&quot;EPSG&quot;,8805]],PARAMETER[&quot;False easting&quot;,500000,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,8806]],PARAMETER[&quot;False northing&quot;,0,LENGTHUNIT[&quot;metre&quot;,1],ID[&quot;EPSG&quot;,8807]]],CS[Cartesian,2],AXIS[&quot;(E)&quot;,east,ORDER[1],LENGTHUNIT[&quot;metre&quot;,1]],AXIS[&quot;(N)&quot;,north,ORDER[2],LENGTHUNIT[&quot;metre&quot;,1]],USAGE[SCOPE[&quot;Navigation and medium accuracy spatial referencing.&quot;],AREA[&quot;Between 108°W and 102°W, northern hemisphere between equator and 84°N, onshore and offshore. Canada - Northwest Territories (NWT); Nunavut; Saskatchewan. Mexico. United States (USA).&quot;],BBOX[0,-108,84,-102]],ID[&quot;EPSG&quot;,32613]]</dd><dt><span>semi_major_axis :</span></dt><dd>6378137.0</dd><dt><span>semi_minor_axis :</span></dt><dd>6356752.314245179</dd><dt><span>inverse_flattening :</span></dt><dd>298.257223563</dd><dt><span>reference_ellipsoid_name :</span></dt><dd>WGS 84</dd><dt><span>longitude_of_prime_meridian :</span></dt><dd>0.0</dd><dt><span>prime_meridian_name :</span></dt><dd>Greenwich</dd><dt><span>geographic_crs_name :</span></dt><dd>WGS 84</dd><dt><span>horizontal_datum_name :</span></dt><dd>World Geodetic System 1984 ensemble</dd><dt><span>projected_crs_name :</span></dt><dd>WGS 84 / UTM zone 13N</dd><dt><span>grid_mapping_name :</span></dt><dd>transverse_mercator</dd><dt><span>latitude_of_projection_origin :</span></dt><dd>0.0</dd><dt><span>longitude_of_central_meridian :</span></dt><dd>-105.0</dd><dt><span>false_easting :</span></dt><dd>500000.0</dd><dt><span>false_northing :</span></dt><dd>0.0</dd><dt><span>scale_factor_at_central_meridian :</span></dt><dd>0.9996</dd><dt><span>GeoTransform :</span></dt><dd>475810 10 0 4426430 0 -10</dd></dl></div><div class='xr-var-data'><pre>array(32613, dtype=int32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2022-01-26T17:56:21.024000 ... 2...</div><input id='attrs-388fb222-ce83-41f0-a6d2-ebefb6d20d40' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-388fb222-ce83-41f0-a6d2-ebefb6d20d40' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-40ceb9e2-8ffb-4076-ba7d-9ed4b109648b' class='xr-var-data-in' type='checkbox'><label for='data-40ceb9e2-8ffb-4076-ba7d-9ed4b109648b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2022-01-26T17:56:21.024000000&#x27;, &#x27;2022-01-31T17:55:49.024000000&#x27;,
        &#x27;2022-02-05T17:55:31.024000000&#x27;, &#x27;2022-02-07T17:45:09.024000000&#x27;,
        &#x27;2022-02-15T17:54:31.024000000&#x27;, &#x27;2022-02-20T17:53:49.025000000&#x27;,
        &#x27;2022-02-27T17:42:49.024000000&#x27;, &#x27;2022-03-07T17:52:01.024000000&#x27;,
@@ -687,49 +722,5 @@ Coordinates:
        &#x27;2022-11-22T17:56:41.024000000&#x27;, &#x27;2022-12-04T17:47:19.024000000&#x27;,
        &#x27;2022-12-09T17:47:31.024000000&#x27;, &#x27;2022-12-17T17:57:39.024000000&#x27;,
        &#x27;2022-12-22T17:57:41.024000000&#x27;, &#x27;2022-12-29T17:47:41.024000000&#x27;],
-      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>band</span></div><div class='xr-var-dims'>(band)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>&#x27;B01&#x27; &#x27;B02&#x27; &#x27;B03&#x27; ... &#x27;B12&#x27; &#x27;B8A&#x27;</div><input id='attrs-a4ce8927-71dc-4a7d-8b02-02048dae8dec' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-a4ce8927-71dc-4a7d-8b02-02048dae8dec' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-aa47fca6-9fd5-45a2-9485-3a18cd5f5020' class='xr-var-data-in' type='checkbox'><label for='data-aa47fca6-9fd5-45a2-9485-3a18cd5f5020' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;B01&#x27;, &#x27;B02&#x27;, &#x27;B03&#x27;, &#x27;B04&#x27;, &#x27;B05&#x27;, &#x27;B06&#x27;, &#x27;B07&#x27;, &#x27;B08&#x27;, &#x27;B09&#x27;, &#x27;B11&#x27;,
-       &#x27;B12&#x27;, &#x27;B8A&#x27;], dtype=object)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-16f08479-50bc-4d5d-93b1-03d3e7ad1c08' class='xr-section-summary-in' type='checkbox'  ><label for='section-16f08479-50bc-4d5d-93b1-03d3e7ad1c08' class='xr-section-summary' >Indexes: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>y</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-1d8b2f5d-1e54-448f-942e-21e2170fb9a2' class='xr-index-data-in' type='checkbox'/><label for='index-1d8b2f5d-1e54-448f-942e-21e2170fb9a2' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([4426425.0, 4426415.0, 4426405.0, 4426395.0, 4426385.0, 4426375.0,
-       4426365.0, 4426355.0, 4426345.0, 4426335.0,
-       ...
-       4424865.0, 4424855.0, 4424845.0, 4424835.0, 4424825.0, 4424815.0,
-       4424805.0, 4424795.0, 4424785.0, 4424775.0],
-      dtype=&#x27;float64&#x27;, name=&#x27;y&#x27;, length=166))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>x</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-8257b67e-3fe1-4e4e-a304-258c4d909b69' class='xr-index-data-in' type='checkbox'/><label for='index-8257b67e-3fe1-4e4e-a304-258c4d909b69' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([475815.0, 475825.0, 475835.0, 475845.0, 475855.0, 475865.0, 475875.0,
-       475885.0, 475895.0, 475905.0,
-       ...
-       477155.0, 477165.0, 477175.0, 477185.0, 477195.0, 477205.0, 477215.0,
-       477225.0, 477235.0, 477245.0],
-      dtype=&#x27;float64&#x27;, name=&#x27;x&#x27;, length=144))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-48b494fc-62ca-4b3f-b762-8574f4d05a61' class='xr-index-data-in' type='checkbox'/><label for='index-48b494fc-62ca-4b3f-b762-8574f4d05a61' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;2022-01-26 17:56:21.024000&#x27;, &#x27;2022-01-31 17:55:49.024000&#x27;,
-               &#x27;2022-02-05 17:55:31.024000&#x27;, &#x27;2022-02-07 17:45:09.024000&#x27;,
-               &#x27;2022-02-15 17:54:31.024000&#x27;, &#x27;2022-02-20 17:53:49.025000&#x27;,
-               &#x27;2022-02-27 17:42:49.024000&#x27;, &#x27;2022-03-07 17:52:01.024000&#x27;,
-               &#x27;2022-03-14 17:41:11.024000&#x27;, &#x27;2022-03-19 17:39:39.024000&#x27;,
-               &#x27;2022-04-01 17:49:09.024000&#x27;, &#x27;2022-04-08 17:38:59.024000&#x27;,
-               &#x27;2022-04-18 17:38:59.024000&#x27;, &#x27;2022-04-21 17:48:59.024000&#x27;,
-               &#x27;2022-04-26 17:49:11.024000&#x27;, &#x27;2022-05-11 17:49:09.024000&#x27;,
-               &#x27;2022-05-18 17:38:59.024000&#x27;, &#x27;2022-05-26 17:49:21.024000&#x27;,
-               &#x27;2022-06-02 17:39:11.024000&#x27;, &#x27;2022-06-07 17:39:09.024000&#x27;,
-               &#x27;2022-06-15 17:49:21.024000&#x27;, &#x27;2022-06-17 17:39:09.024000&#x27;,
-               &#x27;2022-06-20 17:49:09.024000&#x27;, &#x27;2022-06-27 17:39:09.024000&#x27;,
-               &#x27;2022-07-02 17:39:21.024000&#x27;, &#x27;2022-07-07 17:39:09.024000&#x27;,
-               &#x27;2022-07-12 17:39:21.024000&#x27;, &#x27;2022-07-17 17:39:09.024000&#x27;,
-               &#x27;2022-07-22 17:39:11.024000&#x27;, &#x27;2022-07-25 17:49:21.024000&#x27;,
-               &#x27;2022-07-27 17:39:09.024000&#x27;, &#x27;2022-07-30 17:49:09.024000&#x27;,
-               &#x27;2022-08-04 17:49:21.024000&#x27;, &#x27;2022-08-06 17:39:09.024000&#x27;,
-               &#x27;2022-08-09 17:49:09.024000&#x27;, &#x27;2022-08-11 17:39:21.024000&#x27;,
-               &#x27;2022-08-21 17:39:21.024000&#x27;, &#x27;2022-08-24 17:49:21.024000&#x27;,
-               &#x27;2022-08-29 17:49:09.024000&#x27;, &#x27;2022-08-31 17:39:21.024000&#x27;,
-               &#x27;2022-09-03 17:49:21.024000&#x27;, &#x27;2022-09-05 17:39:09.024000&#x27;,
-               &#x27;2022-09-08 17:49:09.024000&#x27;, &#x27;2022-09-18 17:50:09.024000&#x27;,
-               &#x27;2022-09-23 17:50:51.024000&#x27;, &#x27;2022-09-25 17:40:59.024000&#x27;,
-               &#x27;2022-10-05 17:41:59.024000&#x27;, &#x27;2022-10-08 17:52:29.024000&#x27;,
-               &#x27;2022-10-10 17:42:51.024000&#x27;, &#x27;2022-10-13 17:53:11.024000&#x27;,
-               &#x27;2022-10-18 17:53:29.024000&#x27;, &#x27;2022-10-25 17:44:19.024000&#x27;,
-               &#x27;2022-10-28 17:54:39.024000&#x27;, &#x27;2022-10-30 17:44:51.024000&#x27;,
-               &#x27;2022-11-02 17:55:11.024000&#x27;, &#x27;2022-11-07 17:55:39.024000&#x27;,
-               &#x27;2022-11-09 17:45:51.024000&#x27;, &#x27;2022-11-19 17:46:31.024000&#x27;,
-               &#x27;2022-11-22 17:56:41.024000&#x27;, &#x27;2022-12-04 17:47:19.024000&#x27;,
-               &#x27;2022-12-09 17:47:31.024000&#x27;, &#x27;2022-12-17 17:57:39.024000&#x27;,
-               &#x27;2022-12-22 17:57:41.024000&#x27;, &#x27;2022-12-29 17:47:41.024000&#x27;],
-              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;time&#x27;, freq=None))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>band</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-e3bf4e19-c05c-4f08-9204-934a1ef4732f' class='xr-index-data-in' type='checkbox'/><label for='index-e3bf4e19-c05c-4f08-9204-934a1ef4732f' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([&#x27;B01&#x27;, &#x27;B02&#x27;, &#x27;B03&#x27;, &#x27;B04&#x27;, &#x27;B05&#x27;, &#x27;B06&#x27;, &#x27;B07&#x27;, &#x27;B08&#x27;, &#x27;B09&#x27;, &#x27;B11&#x27;,
-       &#x27;B12&#x27;, &#x27;B8A&#x27;],
-      dtype=&#x27;object&#x27;, name=&#x27;band&#x27;))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-8d432154-3670-4ead-b1ef-3fe138078e86' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-8d432154-3670-4ead-b1ef-3fe138078e86' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div>
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>band</span></div><div class='xr-var-dims'>(band)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>&#x27;B01&#x27; &#x27;B02&#x27; &#x27;B03&#x27; ... &#x27;B12&#x27; &#x27;B8A&#x27;</div><input id='attrs-376c4e51-d52c-481d-a800-1629c818fcae' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-376c4e51-d52c-481d-a800-1629c818fcae' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a81158e8-8210-4344-80ab-006fc2943056' class='xr-var-data-in' type='checkbox'><label for='data-a81158e8-8210-4344-80ab-006fc2943056' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;B01&#x27;, &#x27;B02&#x27;, &#x27;B03&#x27;, &#x27;B04&#x27;, &#x27;B05&#x27;, &#x27;B06&#x27;, &#x27;B07&#x27;, &#x27;B08&#x27;, &#x27;B09&#x27;, &#x27;B11&#x27;,
+       &#x27;B12&#x27;, &#x27;B8A&#x27;], dtype=object)</pre></div></li></ul></div></li></ul></div></div>
